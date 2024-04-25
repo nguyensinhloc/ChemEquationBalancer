@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chemical Equation Balancer</title>
+  </head>
+  <body>
+    <h1>Chemical Equation Balancer</h1>
+    <form action="" method="post">
+      <label for="reactants">Reactants:</label>
+      <input type="text" id="reactants" name="reactants"><br><br>
+      <label for="products">Products:</label>
+      <input type="text" id="products" name="products"><br><br>
+      <input type="submit" value="Balance Equation">
+    </form>
+    {% if balanced_reactants %}
+      <h2>Balanced Reactants: {{ balanced_reactants }}</h2>
+      <h2>Balanced Products: {{ balanced_products }}</h2>
+      <img src="data:image/png;base64,{{ visualization }}" alt="Chemical Equation Stoichiometry">
+    {% elif error %}
+      <p>{{ error }}</p>
+    {% endif %}
+  </body>
+</html>
